@@ -25,3 +25,21 @@ def test_starts_with_positive(string_utils):
 
 def test_end_with_positive(string_utils):
     assert string_utils.end
+
+
+# негативные сценарии 
+
+def test_to_list_negative(string_utils):
+    with pytest.raises(TypeError):
+        string_utils.to_list(123)
+
+def test_contains_negative(string_utils):
+    assert not string_utils.contains("SkyPro", "X")
+
+def test_delete_symbol_negative(string_utils):
+    with pytest.raises(TypeError):
+        string_utils.delete_symbol(123, "k")
+        
+        
+def test_end_with_negative(string_utils):
+    assert string_utils.end
